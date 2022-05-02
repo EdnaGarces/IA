@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContentModerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Content Moderator" Height="260" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Grid.RowSpan="2" Header=" Texto a revisar " Margin="7,5,233,10" Grid.Column="1">
+            <TextBox x:Name="txbTexto" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        </GroupBox>
+        <Button Content="Revisar" Grid.Column="1" Grid.Row="0" x:Name="btnRevisar" Click="btnRevisar_Click" Margin="581,17,10,182" Grid.RowSpan="2"/>
+        <GroupBox Grid.Row="1" Header=" Resultados " Grid.Column="1" Margin="586,62,10,10">
+            <TextBox x:Name="txbResultados" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        </GroupBox>
     </Grid>
 </Window>
