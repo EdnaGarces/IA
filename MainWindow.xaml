@@ -5,22 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContentModerator"
         mc:Ignorable="d"
-        Title="Content Moderator" Height="260" Width="800">
-    <Grid>
+        Title="Content Moderator" Height="247" Width="800">
+    <Grid Margin="0,0,0,3">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <GroupBox Grid.Row="0" Grid.RowSpan="2" Header=" Texto a revisar " Margin="7,5,233,10" Grid.Column="1">
-            <TextBox x:Name="txbTexto" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <GroupBox Header=" Texto a revisar " Margin="7,5,10,0" Grid.Column="0">
+            <TextBox x:Name="txbTexto" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         </GroupBox>
-        <Button Content="Revisar" Grid.Column="1" Grid.Row="0" x:Name="btnRevisar" Click="btnRevisar_Click" Margin="581,17,10,182" Grid.RowSpan="2"/>
-        <GroupBox Grid.Row="1" Header=" Resultados " Grid.Column="1" Margin="586,62,10,10">
-            <TextBox x:Name="txbResultados" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <WrapPanel Grid.Column="2" Height="145" HorizontalAlignment="Center" VerticalAlignment="Top" Width="152" Margin="0,44,0,0">
+            <Button Content="Moderar contenido" x:Name="btnRevisar" Click="btnRevisar_Click" Width="150" Height="39"/>
+            <Button Content="Analisis de Sentimientos" x:Name="btnAnalisisSentimientos" Click="btnAnalisisSentimientos_Click" Height="43" Width="150"/>
+            <Button Content="Traductor" x:Name="btnTraductor" Click="btnTraductor_Click" Height="43" Width="150"/>
+        </WrapPanel>
+        <GroupBox Header=" Resultados " Grid.Column="1" Margin="0,6,0,0" HorizontalAlignment="Center" Width="247">
+            <TextBox x:Name="txbResultados" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         </GroupBox>
     </Grid>
 </Window>
